@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Adam Nagy AngularJS basics</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -257,6 +257,125 @@
 
 				<section>
 					<h2>Directives</h2>
+					<ul>
+						<li class="fragment">custom html elements and attributes</li>
+						<li class="fragment">probably the most important feature of Angular</li>
+						<li class="fragment">e.g. a button is the same, but "native"</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Our first directive</h2>
+					<p data-height="265" data-theme-id="0" data-slug-hash="jqdvLJ" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/jqdvLJ/">Angular our first directive</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+				</section>
+
+				<section>
+					<h2>Directives!</h2>
+					<p>A directive can be</p>
+					<ul>
+						<li class="fragment">
+							element (E)
+						</li>
+						<li class="fragment">
+							attribute (A)
+						</li>
+						<li class="fragment">
+							class (C)
+						</li>
+						<li class="fragment">
+							comment (M)
+						</li>
+						<li class="fragment">
+							or combined (EAC)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Passing data into a Directive</h2>
+					<p data-height="265" data-theme-id="0" data-slug-hash="aNXQag" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/aNXQag/">Angular passing data to directives</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<p class="fragment">using <code>scope</code> at the directive definition object we are declaring an isolated scope</p>
+					<p class="fragment">the directive gets its own <code>$scope</code> object, which we can only use inside other methods/expressions of the directive</p>
+				</section>
+
+				<section>
+					<h2>Built-in directives</h2>
+					<p class="fragment">pre-built directives developed by the Angular team</p>
+					<ul>
+						<li class="fragment">
+							<code>ng-href</code>
+						</li>
+						<li class="fragment">
+							<code>ng-class</code>
+						</li>
+						<li class="fragment">
+							<code>ng-style</code>
+						</li>
+						<li class="fragment">
+							<code>ng-src</code>
+						</li>
+						<li class="fragment">
+							<code>ng-disabled</code>
+						</li>
+						<li class="fragment">
+							<code>ng-checked</code>
+						</li>
+						<li class="fragment">
+							<code>ng-readonly</code>
+						</li>
+						<li class="fragment">
+							<code>ng-selected</code>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Built-in directives - with child scope</h2>
+					<p class="fragment">pre-built directives developed by the Angular team</p>
+					<ul>
+						<li class="fragment">
+							<code>ng-app</code>
+						</li>
+						<li class="fragment">
+							<code>ng-controller</code>
+						</li>
+						<li class="fragment">
+							<code>ng-include</code>
+						</li>
+						<li class="fragment">
+							<code>ng-view</code>
+						</li>
+						<li class="fragment">
+							<code>ng-if</code>
+						</li>
+						<li class="fragment">
+							<code>ng-repeat</code>
+						</li>
+						<li class="fragment">
+							<code>ng-include</code>
+						</li>
+						<li class="fragment">
+							<code>ng-init</code>
+						</li>
+						<li class="fragment">
+							<code>ng-bind</code>
+						</li>
+						<li class="fragment">
+							<code>ng-cloak</code>
+						</li>
+						<li class="fragment">
+							<code>ng-bond-template</code>
+						</li>
+						<li class="fragment">
+							<code>ng-model</code>
+						</li>
+						<li class="fragment">
+							<code>ng-show</code>
+						</li>
+						<li class="fragment">
+							... TODO just the most used ones here
+						</li>
+					</ul>
 				</section>
 
 			</div>
