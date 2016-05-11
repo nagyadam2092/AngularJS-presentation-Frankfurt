@@ -296,10 +296,12 @@
 					<p data-height="265" data-theme-id="0" data-slug-hash="aNXQag" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/aNXQag/">Angular passing data to directives</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 					<p class="fragment">using <code>scope</code> at the directive definition object we are declaring an isolated scope</p>
 					<p class="fragment">the directive gets its own <code>$scope</code> object, which we can only use inside other methods/expressions of the directive</p>
+					<!--TODO-->
+					<p>TODO scope accessors?</p>
 				</section>
 
 				<section>
-					<h2>Built-in directives</h2>
+					<h2>Basic <code>ng</code> attribute directives</h2>
 					<p class="fragment">pre-built directives developed by the Angular team</p>
 					<ul>
 						<li class="fragment">
@@ -340,25 +342,31 @@
 							<code>ng-controller</code>
 						</li>
 						<li class="fragment">
-							<code>ng-include</code>
-						</li>
-						<li class="fragment">
-							<code>ng-view</code>
-						</li>
-						<li class="fragment">
 							<code>ng-if</code>
+						</li>
+						<li class="fragment">
+							<code>ng-click</code>
+						</li>
+						<li class="fragment">
+							<code>ng-model</code>
 						</li>
 						<li class="fragment">
 							<code>ng-repeat</code>
 						</li>
 						<li class="fragment">
-							<code>ng-include</code>
-						</li>
-						<li class="fragment">
 							<code>ng-init</code>
 						</li>
 						<li class="fragment">
+							<code>ng-show</code>
+						</li>
+						<li class="fragment">
 							<code>ng-bind</code>
+						</li>
+						<li class="fragment">
+							<code>ng-view</code>
+						</li>
+						<li class="fragment">
+							<code>ng-include</code>
 						</li>
 						<li class="fragment">
 							<code>ng-cloak</code>
@@ -366,16 +374,30 @@
 						<li class="fragment">
 							<code>ng-bond-template</code>
 						</li>
-						<li class="fragment">
-							<code>ng-model</code>
-						</li>
-						<li class="fragment">
-							<code>ng-show</code>
-						</li>
+						<!--TODO-->
 						<li class="fragment">
 							... TODO just the most used ones here
 						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2><code>ng-repeat</code></h2>
+					<p>one of the most used built-in directive</p>
+					<p data-height="265" data-theme-id="0" data-slug-hash="XdGmax" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/XdGmax/">Angular basic ng-repeat</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+				</section>
+
+				<section>
+					<h2>Dig deeper with directives</h2>
+					<blockquote cite="https://www.ng-book.com/">
+						&ldquo;The simplest way to think about a directive is that it is simply a function that we run on a particular DOM element.
+						The <code>directive</code> function provides extra functionality. &rdquo;
+					</blockquote>
+					<pre><code class="js">angular.module('myApp')
+.directive('myDirective',
+function($timeout, UserDefinedService) {
+	// directive definition goes here
+});</code></pre>
 				</section>
 
 			</div>
