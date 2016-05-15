@@ -589,8 +589,10 @@ return function postLink(...) {...
         </section>
 
         <section>
-            <h2>Other directive parameters</h2>
-            <p class="fragment">press your down arrow, Adam ;)</p>
+            <section>
+                <h2>Other directive parameters</h2>
+                <p class="fragment">press your down arrow, Adam ;)</p>
+            </section>
 
             <section>
                 <h2>controller</h2>
@@ -678,7 +680,7 @@ return function postLink(...) {...
     .controller('MyController', function(aVeryDifferentNameThanScope){
         // can reach $scope via aVeryDifferentNameThanScope object
     });
-ctrl.$inject = ['$scope'];
+ctrl.$inject = ['$scope'];</code></pre>
         </section>
 
 
