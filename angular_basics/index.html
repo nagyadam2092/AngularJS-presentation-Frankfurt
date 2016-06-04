@@ -20,6 +20,12 @@
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../lib/css/zenburn.css">
 
+    <style>
+        .passing-data-into-a-directive div {
+            height: 200px;
+        }
+    </style>
+
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement('link');
@@ -69,46 +75,46 @@
             <p><a href="https://angularjs.org/">https://angularjs.org/</a></p>
         </section>
 
-        <section>
-            <h2>Competitors</h2>
-            <h4>An opinionated list</h4>
-            <table>
-                <thead>
-                <tr>
-                    <th>Framework</th>
-                    <th>Pros</th>
-                    <th>Cons</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>React</td>
-                    <td>$1</td>
-                    <td>7</td>
-                </tr>
-                <tr>
-                    <td>React with Redux/etc.</td>
-                    <td>$2</td>
-                    <td>18</td>
-                </tr>
-                <tr>
-                    <td>Ember</td>
-                    <td>$3</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Backbone</td>
-                    <td>$3</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>ExtJS</td>
-                    <td>$3</td>
-                    <td>2</td>
-                </tr>
-                </tbody>
-            </table>
-        </section>
+        <!--<section>-->
+            <!--<h2>Competitors</h2>-->
+            <!--<h4>An opinionated list</h4>-->
+            <!--<table>-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>Framework</th>-->
+                    <!--<th>Pros</th>-->
+                    <!--<th>Cons</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>React</td>-->
+                    <!--<td>$1</td>-->
+                    <!--<td>7</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>React with Redux/etc.</td>-->
+                    <!--<td>$2</td>-->
+                    <!--<td>18</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Ember</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Backbone</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>ExtJS</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</section>-->
 
         <section>
             <h2>Modules</h2>
@@ -357,7 +363,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="passing-data-into-a-directive">
             <h2>Passing data into a Directive</h2>
 
             <p data-height="265" data-theme-id="0" data-slug-hash="aNXQag" data-default-tab="js,result"
@@ -470,58 +476,57 @@
 
         <section>
             <h2>Dig deeper with directives</h2>
-            <blockquote cite="https://www.ng-book.com/">
-                &ldquo;The simplest way to think about a directive is that it is simply a function that we run on a
-                particular DOM element.
-                The <code>directive</code> function provides extra functionality. &rdquo;
-            </blockquote>
+            <p>The simplest way to think about a directive is that it is simply a function that we run on a
+                particular DOM element.</p>
+                The <code>directive</code> function provides extra functionality.
 					<pre><code class="js">angular.module('myApp')
-                        .directive('myDirective',
-                        function($timeout, UserDefinedService) {
-                        // directive definition goes here
-                        });</code></pre>
+    .directive('myDirective',
+    function($timeout, UserDefinedService) {
+    // directive definition goes here
+    });</code></pre>
             <p>The <code>directive</code> method takes two arguments:</p>
-            <ul>
-                <li>name</li>
-                <li>factory function</li>
-            </ul>
+            <p class="fragment">name and factory function</p>
+            <!--<ul>-->
+                <!--<li>name</li>-->
+                <!--<li>factory function</li>-->
+            <!--</ul>-->
         </section>
 
         <section>
             <h2>Directive definition</h2>
 					<pre><code class="js">angular.module('myApp', [])
-.directive('myDirective', function() {
-return {
-restrict: String,
-priority: Number,
-terminal: Boolean,
-template: String or Template Function: function(tElement, tAttrs)(...
-},
-templateUrl: String,
-replace: Boolean or String,
-scope: Boolean or Object,
-transclude: Boolean,
-controller: String or
-function(scope, element, attrs, transclude, otherInjectables) {...
-},
-controllerAs: String,
-require: String,
-link: function(scope, iElement, iAttrs) {...
-},
-compile: // return an Object OR the link function
-// as in below:
-function(tElement, tAttrs, transclude) {
-return {
-pre: function(scope, iElement, iAttrs, controller) {...
-},
-post: function(scope, iElement, iAttrs, controller) {...
-}
-}
-// or
-return function postLink(...) {...
-}
-}
-};</code></pre>
+    .directive('myDirective', function() {
+    return {
+        restrict: String,
+        priority: Number,
+        terminal: Boolean,
+        template: String or Template Function: function(tElement, tAttrs)(...
+        },
+        templateUrl: String,
+        replace: Boolean or String,
+        scope: Boolean or Object,
+        transclude: Boolean,
+        controller: String or
+        function(scope, element, attrs, transclude, otherInjectables) {...
+        },
+        controllerAs: String,
+        require: String,
+        link: function(scope, iElement, iAttrs) {...
+        },
+        compile: // return an Object OR the link function
+        // as in below:
+        function(tElement, tAttrs, transclude) {
+        return {
+        pre: function(scope, iElement, iAttrs, controller) {...
+        },
+        post: function(scope, iElement, iAttrs, controller) {...
+        }
+    }
+    // or
+    return function postLink(...) {...
+    }
+    }
+    };</code></pre>
         </section>
 
         <section>
@@ -571,7 +576,7 @@ return function postLink(...) {...
 
         <section>
             <h2>Another example for niherited / isolated scope</h2>
-            <p data-height="265" data-theme-id="0" data-slug-hash="KzYopM" data-default-tab="result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/KzYopM/">Angular directive inherited / isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="KzYopM" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/KzYopM/">Angular directive inherited / isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
         <section>
@@ -714,7 +719,7 @@ ctrl.$inject = ['$scope'];</code></pre>
 
         <section>
             <h2>Section - example #2</h2>
-            <p data-height="265" data-theme-id="0" data-slug-hash="yOrKEz" data-default-tab="result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKEz/">Angular service example</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="yOrKEz" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKEz/">Angular service example</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
 
@@ -747,12 +752,12 @@ ctrl.$inject = ['$scope'];</code></pre>
         <section>
             <h2>$watch</h2>
             <p class="fragment">watchers could be set to detect changes in the view/model</p>
-            <p data-height="265" data-theme-id="0" data-slug-hash="dMLxap" data-default-tab="result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/dMLxap/">Angular $watch</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="dMLxap" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/dMLxap/">Angular $watch</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
         <section>
             <h2>jQuery and $apply</h2>
-            <p data-height="265" data-theme-id="0" data-slug-hash="RaOXXZ" data-default-tab="result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/RaOXXZ/">Angular, jQuery and $apply</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="RaOXXZ" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/RaOXXZ/">Angular, jQuery and $apply</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
         <!--<section>
