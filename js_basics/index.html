@@ -81,16 +81,20 @@
             </ul>
 
             <aside class="notes">
-                <li>Brendan Eich (1995)</li>
-                <li>First release with NetScape 2 in 1996</li>
-                <li>originally "LiveScript" --> JAVA is popular --> JavaScript..</li>
-                <li>Several months later Microsoft's JScript (IE3)</li>
-                <li>Several months later Netscape submitted JavaScript to Ecma International</li>
-                <li>EcmaScript standard that year</li>
-                <li>In 1999 EcmaScript 3 (pretty stable)</li>
-                <li>4th edition was skipped.. (because of language complexity)</li>
-                <li>EcmaScript 5 in 2009 (!)</li>
-                <li>6th edition (or EcmaScript2015) in June of 2015</li>
+                <p>JavaScript is like English</p>
+                <p>imo overused, not like as intended</p>
+                <ul>
+                    <li>Brendan Eich (1995)</li>
+                    <li>First release with NetScape 2 in 1996</li>
+                    <li>originally "LiveScript" --> JAVA is popular --> JavaScript..</li>
+                    <li>Several months later Microsoft's JScript (IE3)</li>
+                    <li>Several months later Netscape submitted JavaScript to Ecma International</li>
+                    <li>EcmaScript standard that year</li>
+                    <li>In 1999 EcmaScript 3 (pretty stable)</li>
+                    <li>4th edition was skipped.. (because of language complexity)</li>
+                    <li>EcmaScript 5 in 2009 (!)</li>
+                    <li>6th edition (or EcmaScript2015) in June of 2015</li>
+                </ul>
             </aside>
         </section>
 
@@ -126,6 +130,7 @@
                         <li>dynamic language </li>
                         <li>with types and operators</li>
                         <li>standard built-in objects, and methods</li>
+                        <li>single-threaded</li>
                     </ul>
                 </li>
                 <li class="fragment">syntax is based on C/C++/JAVA - differences
@@ -138,6 +143,8 @@
             </ul>
 
             <aside class="notes">
+                maybe showing chrome console / node here would be great <br>
+                ServiceWorker
             </aside>
         </section>
 
@@ -150,7 +157,8 @@
             </ul>
 
             <aside class="notes">
-                one of the most important slides..
+                one of the most important slides.. <br>
+                not fully functional - e.g. data is not immutable
             </aside>
         </section>
 
@@ -309,11 +317,15 @@ obj["details"]["size"]; // 12</code></pre>
             <p>special type of object</p>
             <p class="fragment">like regular objects, with a magic property</p>
             <p class="fragment"><code>length</code></p>
-            <pre class="fragment"><code class="js">var a = ["dog", "cat", "hen"];
+            <pre class="fragment"><code class="js">var a = ["dog", "cat", "meerkat"];
 a.length; // 3
-["dog", "cat", "mouse"].forEach(function(currentValue, index, array) {
+["dog", "cat", "meerkat"].forEach(function(currentValue, index, array) {
     // Do something with currentValue or array[index]
 });</code></pre>
+
+            <aside class="notes">
+                basically you can trick your code to make array-like objects
+            </aside>
         </section>
 
         <section>
@@ -534,13 +546,13 @@ twentyAdder(7); // ?</code></pre>
                         return x + y;
                     }
                 }
-                function applyf(cb) {
-                    return function(x) {
-                        return function(y) {
-                            return cb(x)(y);
-                        }
-                    }
-                }
+function applyf(cb) {
+    return function(x) {
+        return function(y) {
+            return cb(x)(y);
+        }
+    }
+}
             </aside>
         </section>
 

@@ -76,7 +76,8 @@
             </blockquote>
             <p><a href="https://angularjs.org/">https://angularjs.org/</a></p>
 
-            <aside class="notes">an example with the old vanilla / jQuery way would be great here</aside>
+            <aside class="notes">an example with the old vanilla / jQuery way would be great here <br>
+            mention ng-book!</aside>
         </section>
 
         <section>
@@ -208,9 +209,9 @@
 
             <aside class="notes">
                 <ul>
-                    <li class="fragment">creation: when a directive / controller is created, it’s created automatically</li>
-                    <li class="fragment">linking: all the scope variables are linked / attached to the view ($watch)</li>
-                    <li class="fragment">updating: when the event loop is running, every child scope is performing it’s
+                    <li>creation: when a directive / controller is created, it’s created automatically</li>
+                    <li>linking: all the scope variables are linked / attached to the view ($watch)</li>
+                    <li>updating: when the event loop is running, every child scope is performing it’s
                         dirty checking. If any change is detected, scope object will fire the watch callback function
                     </li>
                     <li class="fragment">destruction: if a scope is not needed, will be destroyed automatically ($destroy to
@@ -822,7 +823,7 @@ ctrl.$inject = ['$scope'];</code></pre>
         </section>
 
         <section>
-            <h2>Section - example #2</h2>
+            <h2>Service - example #2</h2>
             <p data-height="265" data-theme-id="0" data-slug-hash="yOrKEz" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKEz/">Angular service example</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
@@ -901,27 +902,33 @@ views/
 ---------- sidebar/
 --------------- sidebarDirective.js
 --------------- sidebarView.html
+--------------- sidebar.scss
 ---------- article/
 --------------- articleDirective.js
 --------------- articleView.html
+--------------- article.scss
 ----- components/   // each component is treated as a mini Angular app
 ---------- home/
 --------------- homeController.js
 --------------- homeService.js
 --------------- homeView.html
+--------------- home.scss
 ---------- blog/
 --------------- blogController.js
 --------------- blogService.js
 --------------- blogView.html
+--------------- blog.scss
 ----- app.module.js
 ----- app.routes.js
 assets/
 ----- img/      // Images and icons for your app
------ css/      // All styles and style related files (SCSS or LESS files)
 ----- js/       // JavaScript files written for your app that are not for angular
 ----- libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
 index.html
             </code></pre>
+
+            <aside class="notes">this is not set in stone, more like opinionated <br>
+            mention smart and dumb components?</aside>
         </section>
 
         <section>
@@ -986,9 +993,25 @@ index.html
         </section>
 
         <section>
+            <h2>Bootstrap</h2>
+            <p class="fragment">pre-built CSS classes</p>
+            <p class="fragment">SASS mixins and functions</p>
+        </section>
+
+        <section>
             <h2>Mock-server</h2>
             <p class="fragment">to be able to test your application without changing the original environment</p>
             <p class="fragment">great example: <a href="https://github.com/tombenke/rest-tool">https://github.com/tombenke/rest-tool</a></p>
+            <p class="fragment">Node.js is a good choice here: easy to set up and customize</p>
+        </section>
+
+        <section>
+            <h2>Build and development</h2>
+            <p class="fragment">Gulp</p>
+            <p class="fragment">Webpack</p>
+            <p class="fragment">(Grunt)</p>
+
+            <aside class="notes">Grunt is kinda old (tell more about grunt is sequintial, gulp is parallel)</aside>
         </section>
 
         <!--<section>
